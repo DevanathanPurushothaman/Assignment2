@@ -20,12 +20,14 @@ var objects;
             var _this = _super.call(this, "island") || this;
             _this.Start();
             return _this;
+            // createjs.Tween.get(this).to({rotation:360},3000);
         }
         // private methods
         Island.prototype._checkBounds = function () {
             // check bottom boundary
             if (this.y > config.Screen.HEIGHT + this.halfHeight) {
                 this.Reset();
+                //createjs.Tween.get(this).to({rotation:360},3000);
             }
         };
         // public methods
@@ -34,6 +36,7 @@ var objects;
             this.regY = this.halfHeight;
             this._verticalSpeed = 5;
             this.Reset();
+            // createjs.Tween.get(this).to({rotation:360},3000);
         };
         Island.prototype.Update = function () {
             this.y += this._verticalSpeed;
@@ -42,6 +45,7 @@ var objects;
         Island.prototype.Reset = function () {
             this.y = -this.height;
             this.x = Math.floor((Math.random() * (config.Screen.WIDTH - this.width)) + this.halfWidth);
+            createjs.Tween.get(Island).to({ rotation: 360 }, 3000);
         };
         return Island;
     }(objects.GameObject));

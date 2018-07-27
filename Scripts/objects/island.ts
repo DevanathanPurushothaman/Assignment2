@@ -11,6 +11,7 @@ namespace objects {
       super("island");
 
       this.Start();
+     // createjs.Tween.get(this).to({rotation:360},3000);
     }
 
     // private methods
@@ -18,6 +19,7 @@ namespace objects {
       // check bottom boundary
       if (this.y > config.Screen.HEIGHT + this.halfHeight) {
         this.Reset();
+        //createjs.Tween.get(this).to({rotation:360},3000);
       }
     }
 
@@ -27,6 +29,7 @@ namespace objects {
       this.regY = this.halfHeight;
       this._verticalSpeed = 5;
       this.Reset();
+     // createjs.Tween.get(this).to({rotation:360},3000);
     }
 
     public Update(): void {
@@ -37,6 +40,7 @@ namespace objects {
     public Reset(): void {
       this.y = -this.height;
       this.x = Math.floor((Math.random() * (config.Screen.WIDTH - this.width)) + this.halfWidth);
+      createjs.Tween.get(Island).to({rotation:360},3000);
     }
   }
 }
