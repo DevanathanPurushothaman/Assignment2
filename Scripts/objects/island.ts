@@ -40,7 +40,7 @@ namespace objects {
     public Reset(): void {
       this.y = -this.height;
       this.x = Math.floor((Math.random() * (config.Screen.WIDTH - this.width)) + this.halfWidth);
-      createjs.Tween.get(Island).to({rotation:360},3000);
+      createjs.Tween.get(this).to({rotation:360},20000);
     }
   }
 }

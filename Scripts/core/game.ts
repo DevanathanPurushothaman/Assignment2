@@ -16,8 +16,9 @@
         {id: "ocean", src:"/Assets/images/ocean.gif"},
         {id: "island", src:"/Assets/images/island.png"},
         {id: "cloud", src:"/Assets/images/cloud.png"},
-        {id: "yay", src:"/Assets/audio/yay.ogg"},
-        {id: "thunder", src:"/Assets/audio/thunder.ogg"},
+        {id: "yay", src:"/Assets/audio/save.wav"},
+        {id: "thunder", src:"/Assets/audio/crash.wav"},
+        { id: "GameovSound", src: "/Assets/audio/gameOver.ogg" },
         {id: "engine", src:"/Assets/audio/engine.ogg"}
     ]
 
