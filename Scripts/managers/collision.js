@@ -20,7 +20,7 @@ var managers;
                             break;
                         case "cloud":
                             var thunderSound = createjs.Sound.play("thunder");
-                            thunderSound.volume = 0.05;
+                            thunderSound.volume = 0.1;
                             managers.Game.ScoreBoardManager.Lives -= 1;
                             // check if lives falls below 1
                             if (managers.Game.ScoreBoardManager.Lives <= 0) {

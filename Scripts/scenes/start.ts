@@ -3,7 +3,8 @@ module scenes {
         // member variables
         private _welcomeLabel: objects.Label;
         private _startButton: objects.Button;
-        private _ocean: objects.Ocean;
+        private _ocean: objects.Ocean;        
+        public GameStartSound:createjs.AbstractSoundInstance;
 
         // constructors
         constructor() {
@@ -18,6 +19,9 @@ module scenes {
         public Start():void {
 
             this._ocean = new objects.Ocean();
+            this.GameStartSound=createjs.Sound.play("GameStartSou");
+            this.GameStartSound.volume = 0.1;
+            this.GameStartSound.loop =-1;
             this._welcomeLabel = new objects.Label("Space Ranger", "80px", "Dock51", "Red", 270, config.Screen.HALF_HEIGHT, true);
             this._startButton = new objects.Button("StartButton", config.Screen.HALF_WIDTH, 360, true);
 
@@ -37,6 +41,7 @@ module scenes {
         }
 
         public Main():void {
+           
             console.log(`Starting - START SCENE`);
             this.addChild(this._ocean);
 
@@ -44,6 +49,7 @@ module scenes {
             this.addChild(this._startButton);
 
             this._startButton.on("click", function(){
+                this.GameStartSound.stop();
                 managers.Game.CurrentState = config.Scene.PLAY;
             }, this);
         }

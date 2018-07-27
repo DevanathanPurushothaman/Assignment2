@@ -22,6 +22,9 @@ var scenes;
         // public methods
         Start.prototype.Start = function () {
             this._ocean = new objects.Ocean();
+            this.GameStartSound = createjs.Sound.play("GameStartSou");
+            this.GameStartSound.volume = 0.1;
+            this.GameStartSound.loop = -1;
             this._welcomeLabel = new objects.Label("Space Ranger", "80px", "Dock51", "Red", 270, config.Screen.HALF_HEIGHT, true);
             this._startButton = new objects.Button("StartButton", config.Screen.HALF_WIDTH, 360, true);
             this.Main();
@@ -40,6 +43,7 @@ var scenes;
             this.addChild(this._welcomeLabel);
             this.addChild(this._startButton);
             this._startButton.on("click", function () {
+                this.GameStartSound.stop();
                 managers.Game.CurrentState = config.Scene.PLAY;
             }, this);
         };

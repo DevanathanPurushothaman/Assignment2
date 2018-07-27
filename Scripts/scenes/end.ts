@@ -19,7 +19,7 @@ module scenes {
         public Start():void {
             this._ocean = new objects.Ocean();
             this.GameOverSound=createjs.Sound.play("GameovSound");
-            this.GameOverSound.volume = 0.5;
+            this.GameOverSound.volume = 0.1;
             this._gameOverLabel = new objects.Label("Game Over!", "80px", "Dock51", "Red", config.Screen.HALF_WIDTH, 160, true);
             this._restartButton = new objects.Button("RestartButton", config.Screen.HALF_WIDTH, 360, true);
 
