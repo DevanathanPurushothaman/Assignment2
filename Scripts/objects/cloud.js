@@ -17,7 +17,7 @@ var objects;
          * @memberof Cloud
          */
         function Cloud() {
-            var _this = _super.call(this, "cloud") || this;
+            var _this = _super.call(this, "stone") || this;
             _this.Start();
             return _this;
         }

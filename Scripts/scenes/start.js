@@ -21,17 +21,17 @@ var scenes;
         // private methods
         // public methods
         Start.prototype.Start = function () {
-            this._ocean = new objects.Ocean();
+            this._space = new objects.Ocean();
             this.GameStartSound = createjs.Sound.play("GameStartSou");
             this.GameStartSound.volume = 0.1;
             this.GameStartSound.loop = -1;
-            this._welcomeLabel = new objects.Label("Space Ranger", "80px", "Dock51", "Red", 270, 150, true);
+            this._welcomeLabel = new objects.Label("Space Ranger", "80px", "Dock51", "Red", (config.Screen.HALF_WIDTH - 50), 150, true);
             this._InstructionButton = new objects.Button("InstructionButton", config.Screen.HALF_WIDTH, 260, true);
             this._startButton = new objects.Button("StartButton", config.Screen.HALF_WIDTH, 360, true);
             this.Main();
         };
         Start.prototype.Update = function () {
-            this._ocean.Update();
+            this._space.Update();
         };
         Start.prototype.Reset = function () {
         };
@@ -40,7 +40,7 @@ var scenes;
         };
         Start.prototype.Main = function () {
             console.log("Starting - START SCENE");
-            this.addChild(this._ocean);
+            this.addChild(this._space);
             this.addChild(this._welcomeLabel);
             this.addChild(this._InstructionButton);
             this.addChild(this._startButton);

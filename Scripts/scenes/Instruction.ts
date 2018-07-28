@@ -5,7 +5,7 @@ module scenes {
         private _gameInstructionLabel1: objects.Label;
         private _gameInstructionLabel2: objects.Label;
         private _StartButton: objects.Button;
-        private _ocean: objects.Ocean;
+        private _space: objects.Ocean;
         public GameOverSound:createjs.AbstractSoundInstance;
 
         // constructors
@@ -19,7 +19,7 @@ module scenes {
 
         // public methods
         public Start():void {
-            this._ocean = new objects.Ocean();
+            this._space = new objects.Ocean();
            // this.GameOverSound=createjs.Sound.play("GameovSound");
           //  this.GameOverSound.volume = 0.1;
             this._gameInstructionLabel = new objects.Label("Use the Mouse ", "30px", "Dock51", "Yellow", config.Screen.HALF_WIDTH, 150, true);
@@ -31,7 +31,7 @@ module scenes {
         }
 
         public Update():void {
-            this._ocean.Update();
+            this._space.Update();
         }
 
         public Reset():void {0
@@ -45,7 +45,7 @@ module scenes {
         public Main():void {
             console.log(`Starting - Instruction SCENE`);
 
-            this.addChild(this._ocean);
+            this.addChild(this._space);
 
             this.addChild(this._gameInstructionLabel);
             this.addChild(this._gameInstructionLabel1);

@@ -10,7 +10,7 @@ var managers;
                 if (!object2.isColliding) {
                     object2.isColliding = true;
                     switch (object2.name) {
-                        case "island":
+                        case "spaceman":
                             var yaySound = createjs.Sound.play("yay");
                             yaySound.volume = 0.1;
                             managers.Game.ScoreBoardManager.Score += 100;
@@ -18,7 +18,7 @@ var managers;
                                 managers.Game.ScoreBoardManager.HighScore = managers.Game.ScoreBoardManager.Score;
                             }
                             break;
-                        case "cloud":
+                        case "stone":
                             var thunderSound = createjs.Sound.play("thunder");
                             thunderSound.volume = 0.1;
                             managers.Game.ScoreBoardManager.Lives -= 1;

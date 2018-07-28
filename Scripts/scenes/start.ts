@@ -4,7 +4,7 @@ module scenes {
         private _welcomeLabel: objects.Label;
         private _startButton: objects.Button;
         private _InstructionButton: objects.Button;
-        private _ocean: objects.Ocean;        
+        private _space: objects.Ocean;        
         public GameStartSound:createjs.AbstractSoundInstance;
 
         // constructors
@@ -19,11 +19,11 @@ module scenes {
         // public methods
         public Start():void {
 
-            this._ocean = new objects.Ocean();
+            this._space = new objects.Ocean();
             this.GameStartSound=createjs.Sound.play("GameStartSou");
             this.GameStartSound.volume = 0.1;
             this.GameStartSound.loop =-1;
-            this._welcomeLabel = new objects.Label("Space Ranger", "80px", "Dock51", "Red", 270,150, true);
+            this._welcomeLabel = new objects.Label("Space Ranger", "80px", "Dock51", "Red", (config.Screen.HALF_WIDTH-50),150, true);
             this._InstructionButton = new objects.Button("InstructionButton", config.Screen.HALF_WIDTH, 260, true);
             this._startButton = new objects.Button("StartButton", config.Screen.HALF_WIDTH, 360, true);
 
@@ -31,7 +31,7 @@ module scenes {
         }
 
         public Update():void {
-            this._ocean.Update();
+            this._space.Update();
         }
 
         public Reset():void {
@@ -45,7 +45,7 @@ module scenes {
         public Main():void {
            
             console.log(`Starting - START SCENE`);
-            this.addChild(this._ocean);
+            this.addChild(this._space);
 
             this.addChild(this._welcomeLabel);
             this.addChild(this._InstructionButton);

@@ -9,7 +9,7 @@ namespace objects {
        * @memberof Cloud
        */
       constructor() {
-        super("cloud");
+        super("stone");
   
         this.Start();
       }

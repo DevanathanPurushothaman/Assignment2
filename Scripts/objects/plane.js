@@ -17,7 +17,7 @@ var objects;
          * @memberof Plane
          */
         function Plane() {
-            var _this = _super.call(this, "plane") || this;
+            var _this = _super.call(this, "rocket") || this;
             _this.Start();
             return _this;
         }

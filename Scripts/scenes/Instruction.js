@@ -21,7 +21,7 @@ var scenes;
         // private methods
         // public methods
         Instructon.prototype.Start = function () {
-            this._ocean = new objects.Ocean();
+            this._space = new objects.Ocean();
             // this.GameOverSound=createjs.Sound.play("GameovSound");
             //  this.GameOverSound.volume = 0.1;
             this._gameInstructionLabel = new objects.Label("Use the Mouse ", "30px", "Dock51", "Yellow", config.Screen.HALF_WIDTH, 150, true);
@@ -31,7 +31,7 @@ var scenes;
             this.Main();
         };
         Instructon.prototype.Update = function () {
-            this._ocean.Update();
+            this._space.Update();
         };
         Instructon.prototype.Reset = function () {
             0;
@@ -41,7 +41,7 @@ var scenes;
         };
         Instructon.prototype.Main = function () {
             console.log("Starting - Instruction SCENE");
-            this.addChild(this._ocean);
+            this.addChild(this._space);
             this.addChild(this._gameInstructionLabel);
             this.addChild(this._gameInstructionLabel1);
             this.addChild(this._gameInstructionLabel2);

@@ -11,7 +11,7 @@ namespace managers {
         if (!object2.isColliding) {
           object2.isColliding = true;
             switch(object2.name) {
-                case "island":
+                case "spaceman":
                 let yaySound = createjs.Sound.play("yay");
                 yaySound.volume = 0.1;
                 managers.Game.ScoreBoardManager.Score += 100;
@@ -20,7 +20,7 @@ namespace managers {
                 }
                 break;
 
-                case "cloud":
+                case "stone":
                 let thunderSound = createjs.Sound.play("thunder");
                 thunderSound.volume = 0.1;
                 managers.Game.ScoreBoardManager.Lives -= 1;

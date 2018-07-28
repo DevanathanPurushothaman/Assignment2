@@ -1,11 +1,11 @@
 module scenes {
     export class Play extends objects.Scene {
         // member variables
-        private _plane:objects.Plane;
-        private _ocean:objects.Ocean;
-        private _island:objects.Island;
-        private _clouds:objects.Cloud[];
-        private _cloudNum:number;
+        private Rocket:objects.Plane;
+        private _space:objects.Ocean;
+        private Spaceman:objects.Island;
+        private _stones:objects.Cloud[];
+        private _stoneNum:number;
         
         public engineSound:createjs.AbstractSoundInstance;
 
@@ -18,9 +18,9 @@ module scenes {
 
         // private methods
         private _buildClouds():void {
-            for (let count = 0; count < this._cloudNum; count++) {
-                this._clouds.push(new objects.Cloud());
-                //this._clouds[count] = new objects.Cloud();
+            for (let count = 0; count < this._stoneNum; count++) {
+                this._stones.push(new objects.Cloud());
+                //this._stones[count] = new objects.Cloud();
             }
         }
 
@@ -31,13 +31,13 @@ module scenes {
             this.engineSound.volume = 0.1;
 
 
-            this._plane = new objects.Plane();
-            this._ocean = new objects.Ocean();
-            this._island = new objects.Island();
+            this.Rocket = new objects.Plane();
+            this._space = new objects.Ocean();
+            this.Spaceman = new objects.Island();
 
             // creates an empty array of type Cloud
-            this._clouds = new Array<objects.Cloud>();
-            this._cloudNum = 3;
+            this._stones = new Array<objects.Cloud>();
+            this._stoneNum = 3;
 
             this._buildClouds();
            
@@ -45,15 +45,15 @@ module scenes {
         }
 
         public Update():void {
-            this._plane.Update();
-            this._ocean.Update();
-            this._island.Update();
+            this.Rocket.Update();
+            this._space.Update();
+            this.Spaceman.Update();
 
-            managers.Collision.check(this._plane, this._island);
+            managers.Collision.check(this.Rocket, this.Spaceman);
 
-            this._clouds.forEach(cloud => {
+            this._stones.forEach(cloud => {
                 cloud.Update();
-                managers.Collision.check(this._plane, cloud);
+                managers.Collision.check(this.Rocket, cloud);
             });
             
         }
@@ -71,16 +71,16 @@ module scenes {
             console.log(`Starting - PLAY SCENE`);
 
             // adding the ocean to the scene
-            this.addChild(this._ocean);
+            this.addChild(this._space);
 
             // adding the island to the scene
-            this.addChild(this._island);
+            this.addChild(this.Spaceman);
 
             // adding the plane to the scene
-            this.addChild(this._plane);
+            this.addChild(this.Rocket);
 
             // adding the cloud to the scene
-            for (const cloud of this._clouds) {
+            for (const cloud of this._stones) {
                 this.addChild(cloud);
             }
 

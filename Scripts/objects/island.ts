@@ -8,7 +8,7 @@ namespace objects {
      * @memberof Plane
      */
     constructor() {
-      super("island");
+      super("spaceman");
 
       this.Start();
      // createjs.Tween.get(this).to({rotation:360},3000);

@@ -17,7 +17,7 @@ var objects;
          * @memberof Plane
          */
         function Island() {
-            var _this = _super.call(this, "island") || this;
+            var _this = _super.call(this, "spaceman") || this;
             _this.Start();
             return _this;
             // createjs.Tween.get(this).to({rotation:360},3000);

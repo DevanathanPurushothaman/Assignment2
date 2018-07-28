@@ -6,7 +6,7 @@ namespace objects {
      * @memberof Plane
      */
     constructor() {
-      super("plane");
+      super("rocket");
 
       this.Start();
     }

@@ -20,9 +20,9 @@ var scenes;
         }
         // private methods
         Play.prototype._buildClouds = function () {
-            for (var count = 0; count < this._cloudNum; count++) {
-                this._clouds.push(new objects.Cloud());
-                //this._clouds[count] = new objects.Cloud();
+            for (var count = 0; count < this._stoneNum; count++) {
+                this._stones.push(new objects.Cloud());
+                //this._stones[count] = new objects.Cloud();
             }
         };
         // public methods
@@ -30,24 +30,24 @@ var scenes;
             this.engineSound = createjs.Sound.play("engine");
             this.engineSound.loop = -1;
             this.engineSound.volume = 0.1;
-            this._plane = new objects.Plane();
-            this._ocean = new objects.Ocean();
-            this._island = new objects.Island();
+            this.Rocket = new objects.Plane();
+            this._space = new objects.Ocean();
+            this.Spaceman = new objects.Island();
             // creates an empty array of type Cloud
-            this._clouds = new Array();
-            this._cloudNum = 3;
+            this._stones = new Array();
+            this._stoneNum = 3;
             this._buildClouds();
             this.Main();
         };
         Play.prototype.Update = function () {
             var _this = this;
-            this._plane.Update();
-            this._ocean.Update();
-            this._island.Update();
-            managers.Collision.check(this._plane, this._island);
-            this._clouds.forEach(function (cloud) {
+            this.Rocket.Update();
+            this._space.Update();
+            this.Spaceman.Update();
+            managers.Collision.check(this.Rocket, this.Spaceman);
+            this._stones.forEach(function (cloud) {
                 cloud.Update();
-                managers.Collision.check(_this._plane, cloud);
+                managers.Collision.check(_this.Rocket, cloud);
             });
         };
         Play.prototype.Reset = function () {
@@ -59,13 +59,13 @@ var scenes;
         Play.prototype.Main = function () {
             console.log("Starting - PLAY SCENE");
             // adding the ocean to the scene
-            this.addChild(this._ocean);
+            this.addChild(this._space);
             // adding the island to the scene
-            this.addChild(this._island);
+            this.addChild(this.Spaceman);
             // adding the plane to the scene
-            this.addChild(this._plane);
+            this.addChild(this.Rocket);
             // adding the cloud to the scene
-            for (var _i = 0, _a = this._clouds; _i < _a.length; _i++) {
+            for (var _i = 0, _a = this._stones; _i < _a.length; _i++) {
                 var cloud = _a[_i];
                 this.addChild(cloud);
             }
