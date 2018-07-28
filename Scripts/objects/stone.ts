@@ -1,12 +1,12 @@
 namespace objects {
-    export class Cloud extends objects.GameObject {
+    export class Stone extends objects.GameObject {
       // member variables
       private _verticalSpeed: number;
       private _horizontalSpeed: number;
   
       /**
-       * Creates an instance of Cloud.
-       * @memberof Cloud
+       * Creates an instance of Stone.
+       * @memberof Stone
        */
       constructor() {
         super("stone");

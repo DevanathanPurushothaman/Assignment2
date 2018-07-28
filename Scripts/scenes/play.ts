@@ -3,8 +3,8 @@ module scenes {
         // member variables
         private Rocket:objects.Rocket;
         private _space:objects.Space;
-        private Spaceman:objects.Island;
-        private _stones:objects.Cloud[];
+        private Spaceman:objects.Spaceman;
+        private _stones:objects.Stone[];
         private _stoneNum:number;
         
         public engineSound:createjs.AbstractSoundInstance;
@@ -19,7 +19,7 @@ module scenes {
         // private methods
         private _buildClouds():void {
             for (let count = 0; count < this._stoneNum; count++) {
-                this._stones.push(new objects.Cloud());
+                this._stones.push(new objects.Stone());
                 //this._stones[count] = new objects.Cloud();
             }
         }
@@ -33,10 +33,10 @@ module scenes {
 
             this.Rocket = new objects.Rocket();
             this._space = new objects.Space();
-            this.Spaceman = new objects.Island();
+            this.Spaceman = new objects.Spaceman();
 
-            // creates an empty array of type Cloud
-            this._stones = new Array<objects.Cloud>();
+            // creates an empty array of type stone
+            this._stones = new Array<objects.Stone>();
             this._stoneNum = 3;
 
             this._buildClouds();
@@ -51,9 +51,9 @@ module scenes {
 
             managers.Collision.check(this.Rocket, this.Spaceman);
 
-            this._stones.forEach(cloud => {
-                cloud.Update();
-                managers.Collision.check(this.Rocket, cloud);
+            this._stones.forEach(stone => {
+                stone.Update();
+                managers.Collision.check(this.Rocket, stone);
             });
             
         }
@@ -79,9 +79,9 @@ module scenes {
             // adding the rocket to the scene
             this.addChild(this.Rocket);
 
-            // adding the cloud to the scene
-            for (const cloud of this._stones) {
-                this.addChild(cloud);
+            // adding the stone to the scene
+            for (const stone of this._stones) {
+                this.addChild(stone);
             }
 
             this.addChild(managers.Game.ScoreBoardManager.LivesLabel);

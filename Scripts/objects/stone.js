@@ -10,45 +10,47 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var objects;
 (function (objects) {
-    var Island = /** @class */ (function (_super) {
-        __extends(Island, _super);
+    var Stone = /** @class */ (function (_super) {
+        __extends(Stone, _super);
         /**
-         * Creates an instance of Rockect.
-         * @memberof Rockect
+         * Creates an instance of Stone.
+         * @memberof Stone
          */
-        function Island() {
-            var _this = _super.call(this, "spaceman") || this;
+        function Stone() {
+            var _this = _super.call(this, "stone") || this;
             _this.Start();
             return _this;
-            // createjs.Tween.get(this).to({rotation:360},3000);
         }
         // private methods
-        Island.prototype._checkBounds = function () {
+        Stone.prototype._checkBounds = function () {
             // check bottom boundary
             if (this.y > config.Screen.HEIGHT + this.halfHeight) {
                 this.Reset();
-                //createjs.Tween.get(this).to({rotation:360},3000);
+                //  createjs.Tween.get(this).to({rotation:360},3000);
             }
         };
         // public methods
-        Island.prototype.Start = function () {
+        Stone.prototype.Start = function () {
             this.regX = this.halfWidth;
             this.regY = this.halfHeight;
-            this._verticalSpeed = 5;
+            //   createjs.Tween.get(this).to({rotation:360},3000);
             this.Reset();
-            // createjs.Tween.get(this).to({rotation:360},3000);
         };
-        Island.prototype.Update = function () {
+        Stone.prototype.Update = function () {
             this.y += this._verticalSpeed;
+            this.x += this._horizontalSpeed;
+            //  createjs.Tween.get(this).to({rotation:360},3000);
             this._checkBounds();
         };
-        Island.prototype.Reset = function () {
+        Stone.prototype.Reset = function () {
+            this._verticalSpeed = Math.floor((Math.random() * 5) + 5); // between 5 and 10 ppf
+            this._horizontalSpeed = Math.floor((Math.random() * 4) - 2); // between -2 and 2 ppf
             this.y = -this.height;
             this.x = Math.floor((Math.random() * (config.Screen.WIDTH - this.width)) + this.halfWidth);
-            createjs.Tween.get(this).to({ rotation: 360 }, 20000);
+            //  createjs.Tween.get(this).to({rotation:360},3000);
         };
-        return Island;
+        return Stone;
     }(objects.GameObject));
-    objects.Island = Island;
+    objects.Stone = Stone;
 })(objects || (objects = {}));
-//# sourceMappingURL=island.js.map
+//# sourceMappingURL=stone.js.map

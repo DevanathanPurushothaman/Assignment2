@@ -10,47 +10,45 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var objects;
 (function (objects) {
-    var Cloud = /** @class */ (function (_super) {
-        __extends(Cloud, _super);
+    var Spaceman = /** @class */ (function (_super) {
+        __extends(Spaceman, _super);
         /**
-         * Creates an instance of Cloud.
-         * @memberof Cloud
+         * Creates an instance of Rockect.
+         * @memberof Rockect
          */
-        function Cloud() {
-            var _this = _super.call(this, "stone") || this;
+        function Spaceman() {
+            var _this = _super.call(this, "spaceman") || this;
             _this.Start();
             return _this;
+            // createjs.Tween.get(this).to({rotation:360},3000);
         }
         // private methods
-        Cloud.prototype._checkBounds = function () {
+        Spaceman.prototype._checkBounds = function () {
             // check bottom boundary
             if (this.y > config.Screen.HEIGHT + this.halfHeight) {
                 this.Reset();
-                //  createjs.Tween.get(this).to({rotation:360},3000);
+                //createjs.Tween.get(this).to({rotation:360},3000);
             }
         };
         // public methods
-        Cloud.prototype.Start = function () {
+        Spaceman.prototype.Start = function () {
             this.regX = this.halfWidth;
             this.regY = this.halfHeight;
-            //   createjs.Tween.get(this).to({rotation:360},3000);
+            this._verticalSpeed = 5;
             this.Reset();
+            // createjs.Tween.get(this).to({rotation:360},3000);
         };
-        Cloud.prototype.Update = function () {
+        Spaceman.prototype.Update = function () {
             this.y += this._verticalSpeed;
-            this.x += this._horizontalSpeed;
-            //  createjs.Tween.get(this).to({rotation:360},3000);
             this._checkBounds();
         };
-        Cloud.prototype.Reset = function () {
-            this._verticalSpeed = Math.floor((Math.random() * 5) + 5); // between 5 and 10 ppf
-            this._horizontalSpeed = Math.floor((Math.random() * 4) - 2); // between -2 and 2 ppf
+        Spaceman.prototype.Reset = function () {
             this.y = -this.height;
             this.x = Math.floor((Math.random() * (config.Screen.WIDTH - this.width)) + this.halfWidth);
-            //  createjs.Tween.get(this).to({rotation:360},3000);
+            createjs.Tween.get(this).to({ rotation: 360 }, 20000);
         };
-        return Cloud;
+        return Spaceman;
     }(objects.GameObject));
-    objects.Cloud = Cloud;
+    objects.Spaceman = Spaceman;
 })(objects || (objects = {}));
-//# sourceMappingURL=cloud.js.map
+//# sourceMappingURL=Spaceman.js.map

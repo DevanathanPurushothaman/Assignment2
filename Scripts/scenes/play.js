@@ -21,7 +21,7 @@ var scenes;
         // private methods
         Play.prototype._buildClouds = function () {
             for (var count = 0; count < this._stoneNum; count++) {
-                this._stones.push(new objects.Cloud());
+                this._stones.push(new objects.Stone());
                 //this._stones[count] = new objects.Cloud();
             }
         };
@@ -32,8 +32,8 @@ var scenes;
             this.engineSound.volume = 0.1;
             this.Rocket = new objects.Rocket();
             this._space = new objects.Space();
-            this.Spaceman = new objects.Island();
-            // creates an empty array of type Cloud
+            this.Spaceman = new objects.Spaceman();
+            // creates an empty array of type stone
             this._stones = new Array();
             this._stoneNum = 3;
             this._buildClouds();
@@ -45,9 +45,9 @@ var scenes;
             this._space.Update();
             this.Spaceman.Update();
             managers.Collision.check(this.Rocket, this.Spaceman);
-            this._stones.forEach(function (cloud) {
-                cloud.Update();
-                managers.Collision.check(_this.Rocket, cloud);
+            this._stones.forEach(function (stone) {
+                stone.Update();
+                managers.Collision.check(_this.Rocket, stone);
             });
         };
         Play.prototype.Reset = function () {
@@ -64,10 +64,10 @@ var scenes;
             this.addChild(this.Spaceman);
             // adding the rocket to the scene
             this.addChild(this.Rocket);
-            // adding the cloud to the scene
+            // adding the stone to the scene
             for (var _i = 0, _a = this._stones; _i < _a.length; _i++) {
-                var cloud = _a[_i];
-                this.addChild(cloud);
+                var stone = _a[_i];
+                this.addChild(stone);
             }
             this.addChild(managers.Game.ScoreBoardManager.LivesLabel);
             this.addChild(managers.Game.ScoreBoardManager.ScoreLabel);

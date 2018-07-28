@@ -1,5 +1,5 @@
 namespace objects {
-  export class Island extends objects.GameObject {
+  export class Spaceman extends objects.GameObject {
     // member variables
     private _verticalSpeed: number;
 
