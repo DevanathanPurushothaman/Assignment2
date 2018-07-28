@@ -12,8 +12,8 @@ namespace managers {
           object2.isColliding = true;
             switch(object2.name) {
                 case "spaceman":
-                let yaySound = createjs.Sound.play("yay");
-                yaySound.volume = 0.1;
+                let saveSound = createjs.Sound.play("save");
+                saveSound.volume = 0.1;
                 managers.Game.ScoreBoardManager.Score += 100;
                 if(managers.Game.ScoreBoardManager.Score > managers.Game.ScoreBoardManager.HighScore) {
                   managers.Game.ScoreBoardManager.HighScore = managers.Game.ScoreBoardManager.Score;
@@ -21,8 +21,8 @@ namespace managers {
                 break;
 
                 case "stone":
-                let thunderSound = createjs.Sound.play("thunder");
-                thunderSound.volume = 0.1;
+                let crashSound = createjs.Sound.play("crash");
+                crashSound.volume = 0.05;
                 managers.Game.ScoreBoardManager.Lives -= 1;
                 // check if lives falls below 1
                 if(managers.Game.ScoreBoardManager.Lives <= 0) {

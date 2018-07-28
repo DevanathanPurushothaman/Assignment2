@@ -17,8 +17,8 @@
         { id: "space", src: "/Assets/images/ocean.gif" },
         { id: "spaceman", src: "/Assets/images/island.png" },
         { id: "stone", src: "/Assets/images/cloud.png" },
-        { id: "yay", src: "/Assets/audio/save.wav" },
-        { id: "thunder", src: "/Assets/audio/crash.wav" },
+        { id: "save", src: "/Assets/audio/save.wav" },
+        { id: "crash", src: "/Assets/audio/crash.wav" },
         { id: "GameStartSou", src: "/Assets/audio/GameStart.wav" },
         { id: "GameovSound", src: "/Assets/audio/gameOver.ogg" },
         { id: "engine", src: "/Assets/audio/engine.ogg" }
