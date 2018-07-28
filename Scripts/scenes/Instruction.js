@@ -21,7 +21,7 @@ var scenes;
         // private methods
         // public methods
         Instructon.prototype.Start = function () {
-            this._space = new objects.Ocean();
+            this._space = new objects.Space();
             // this.GameOverSound=createjs.Sound.play("GameovSound");
             //  this.GameOverSound.volume = 0.1;
             this._gameInstructionLabel = new objects.Label("Use the Mouse ", "30px", "Dock51", "Yellow", config.Screen.HALF_WIDTH, 150, true);

@@ -1,8 +1,8 @@
 module scenes {
     export class Play extends objects.Scene {
         // member variables
-        private Rocket:objects.Plane;
-        private _space:objects.Ocean;
+        private Rocket:objects.Rocket;
+        private _space:objects.Space;
         private Spaceman:objects.Island;
         private _stones:objects.Cloud[];
         private _stoneNum:number;
@@ -31,8 +31,8 @@ module scenes {
             this.engineSound.volume = 0.1;
 
 
-            this.Rocket = new objects.Plane();
-            this._space = new objects.Ocean();
+            this.Rocket = new objects.Rocket();
+            this._space = new objects.Space();
             this.Spaceman = new objects.Island();
 
             // creates an empty array of type Cloud
@@ -70,13 +70,13 @@ module scenes {
         public Main():void {
             console.log(`Starting - PLAY SCENE`);
 
-            // adding the ocean to the scene
+            // adding the space to the scene
             this.addChild(this._space);
 
-            // adding the island to the scene
+            // adding the scpaceman to the scene
             this.addChild(this.Spaceman);
 
-            // adding the plane to the scene
+            // adding the rocket to the scene
             this.addChild(this.Rocket);
 
             // adding the cloud to the scene

@@ -13,8 +13,8 @@ var objects;
     var Island = /** @class */ (function (_super) {
         __extends(Island, _super);
         /**
-         * Creates an instance of Plane.
-         * @memberof Plane
+         * Creates an instance of Rockect.
+         * @memberof Rockect
          */
         function Island() {
             var _this = _super.call(this, "spaceman") || this;

@@ -30,8 +30,8 @@ var scenes;
             this.engineSound = createjs.Sound.play("engine");
             this.engineSound.loop = -1;
             this.engineSound.volume = 0.1;
-            this.Rocket = new objects.Plane();
-            this._space = new objects.Ocean();
+            this.Rocket = new objects.Rocket();
+            this._space = new objects.Space();
             this.Spaceman = new objects.Island();
             // creates an empty array of type Cloud
             this._stones = new Array();
@@ -58,11 +58,11 @@ var scenes;
         };
         Play.prototype.Main = function () {
             console.log("Starting - PLAY SCENE");
-            // adding the ocean to the scene
+            // adding the space to the scene
             this.addChild(this._space);
-            // adding the island to the scene
+            // adding the scpaceman to the scene
             this.addChild(this.Spaceman);
-            // adding the plane to the scene
+            // adding the rocket to the scene
             this.addChild(this.Rocket);
             // adding the cloud to the scene
             for (var _i = 0, _a = this._stones; _i < _a.length; _i++) {

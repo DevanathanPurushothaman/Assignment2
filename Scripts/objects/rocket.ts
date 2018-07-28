@@ -1,9 +1,9 @@
 namespace objects {
-  export class Plane extends objects.GameObject {
+  export class Rocket extends objects.GameObject {
     
     /**
-     * Creates an instance of Plane.
-     * @memberof Plane
+     * Creates an instance of Rocket.
+     * @memberof Rocket
      */
     constructor() {
       super("rocket");

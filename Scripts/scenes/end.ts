@@ -4,7 +4,7 @@ module scenes {
         private _gameOverLabel: objects.Label;
         private _restartButton: objects.Button;
         private _restartButton1: objects.Button;
-        private _space: objects.Ocean;
+        private _space: objects.Space;
         public GameOverSound:createjs.AbstractSoundInstance;
 
         // constructors
@@ -18,7 +18,7 @@ module scenes {
 
         // public methods
         public Start():void {
-            this._space = new objects.Ocean();
+            this._space = new objects.Space();
             this.GameOverSound=createjs.Sound.play("GameovSound");
             this.GameOverSound.volume = 0.1;
             this._gameOverLabel = new objects.Label("Game Over!", "80px", "Dock51", "Red", config.Screen.HALF_WIDTH, 160, true);

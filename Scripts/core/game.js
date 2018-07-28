@@ -14,7 +14,7 @@
         { id: "InstructionButton", src: "/Assets/images/Instructionbtn.png" },
         { id: "MenuButton", src: "/Assets/images/menu.png" },
         { id: "rocket", src: "/Assets/images/plane.png" },
-        { id: "ocean", src: "/Assets/images/ocean.gif" },
+        { id: "space", src: "/Assets/images/ocean.gif" },
         { id: "spaceman", src: "/Assets/images/island.png" },
         { id: "stone", src: "/Assets/images/cloud.png" },
         { id: "yay", src: "/Assets/audio/save.wav" },

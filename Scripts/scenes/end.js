@@ -21,7 +21,7 @@ var scenes;
         // private methods
         // public methods
         End.prototype.Start = function () {
-            this._space = new objects.Ocean();
+            this._space = new objects.Space();
             this.GameOverSound = createjs.Sound.play("GameovSound");
             this.GameOverSound.volume = 0.1;
             this._gameOverLabel = new objects.Label("Game Over!", "80px", "Dock51", "Red", config.Screen.HALF_WIDTH, 160, true);

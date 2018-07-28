@@ -4,8 +4,8 @@ namespace objects {
     private _verticalSpeed: number;
 
     /**
-     * Creates an instance of Plane.
-     * @memberof Plane
+     * Creates an instance of Rockect.
+     * @memberof Rockect
      */
     constructor() {
       super("spaceman");

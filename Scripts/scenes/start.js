@@ -21,7 +21,7 @@ var scenes;
         // private methods
         // public methods
         Start.prototype.Start = function () {
-            this._space = new objects.Ocean();
+            this._space = new objects.Space();
             this.GameStartSound = createjs.Sound.play("GameStartSou");
             this.GameStartSound.volume = 0.1;
             this.GameStartSound.loop = -1;
