@@ -11,6 +11,7 @@
     var Manifest = [
         { id: "StartButton", src: "/Assets/images/StartButton.png" },
         { id: "RestartButton", src: "/Assets/images/RestartButton.png" },
+        { id: "InstructionButton", src: "/Assets/images/Instructionbtn.png" },
         { id: "plane", src: "/Assets/images/plane.png" },
         { id: "ocean", src: "/Assets/images/ocean.gif" },
         { id: "island", src: "/Assets/images/island.png" },
@@ -69,6 +70,9 @@
                 break;
             case config.Scene.END:
                 CurrentScene = new scenes.End();
+                break;
+            case config.Scene.INSTRUSTION:
+                CurrentScene = new scenes.Instructon();
                 break;
         }
         managers.Game.CurrentScene = CurrentScene;
