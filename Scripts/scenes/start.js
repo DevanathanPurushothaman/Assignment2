@@ -26,8 +26,9 @@ var scenes;
             this.GameStartSound.volume = 0.1;
             this.GameStartSound.loop = -1;
             this._welcomeLabel = new objects.Label("Space Ranger", "80px", "Dock51", "Red", (config.Screen.HALF_WIDTH - 50), 150, true);
-            this._InstructionButton = new objects.Button("InstructionButton", config.Screen.HALF_WIDTH, 260, true);
-            this._startButton = new objects.Button("StartButton", config.Screen.HALF_WIDTH, 360, true);
+            this._InstructionButton = new objects.Button("InstructionButton", config.Screen.HALF_WIDTH, 220, true);
+            this._startButton = new objects.Button("StartButton", config.Screen.HALF_WIDTH, 290, true);
+            this._ExitButton = new objects.Button("ExitButton", config.Screen.HALF_WIDTH, 360, true);
             this.Main();
         };
         Start.prototype.Update = function () {
@@ -44,12 +45,17 @@ var scenes;
             this.addChild(this._welcomeLabel);
             this.addChild(this._InstructionButton);
             this.addChild(this._startButton);
+            this.addChild(this._ExitButton);
             this._startButton.on("click", function () {
                 this.GameStartSound.stop();
                 managers.Game.CurrentState = config.Scene.PLAY;
             }, this);
             this._InstructionButton.on("click", function () {
-                // this.GameStartSound.stop();
+                this.GameStartSound.stop();
+                managers.Game.CurrentState = config.Scene.INSTRUSTION;
+            }, this);
+            this._ExitButton.on("click", function () {
+                this.GameStartSound.stop();
                 managers.Game.CurrentState = config.Scene.INSTRUSTION;
             }, this);
         };

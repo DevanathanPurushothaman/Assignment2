@@ -12,6 +12,7 @@
         { id: "StartButton", src: "/Assets/images/StartButton.png" },
         { id: "RestartButton", src: "/Assets/images/RestartButton.png" },
         { id: "InstructionButton", src: "/Assets/images/Instructionbtn.png" },
+        { id: "ExitButton", src: "/Assets/images/ExitButton.png" },
         { id: "MenuButton", src: "/Assets/images/menu.png" },
         { id: "rocket", src: "/Assets/images/ship.png" },
         { id: "space", src: "/Assets/images/space.gif" },
