@@ -55,8 +55,12 @@ var scenes;
                 managers.Game.CurrentState = config.Scene.INSTRUSTION;
             }, this);
             this._ExitButton.on("click", function () {
-                this.GameStartSound.stop();
-                managers.Game.CurrentState = config.Scene.INSTRUSTION;
+                //  this.GameStartSound.stop();
+                //managers.Game.CurrentState = config.Scene.INSTRUSTION;
+                // close();
+                var myWindow = window.open("", "_self");
+                myWindow.document.write("");
+                setTimeout(function () { myWindow.close(); }, 1000);
             }, this);
         };
         return Start;

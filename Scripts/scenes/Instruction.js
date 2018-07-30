@@ -48,6 +48,7 @@ var scenes;
             // this.addChild(managers.Game.ScoreBoardManager.HighScoreLabel);
             this.addChild(this._StartButton);
             this._StartButton.on("click", function () {
+                // this.GameStartSound.stop();
                 managers.Game.ScoreBoardManager.Reset();
                 managers.Game.CurrentState = config.Scene.PLAY;
             }, this);
